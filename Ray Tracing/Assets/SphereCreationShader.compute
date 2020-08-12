@@ -1,0 +1,53 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+struct Sphere
+{
+    float3 position;
+    float radius;
+    float3 albedo;
+    float3 specular;
+};
+
+Sphere CreateSphere(float3 pos, float r)
+{
+    Sphere sphere;
+    sphere.position = pos;
+    sphere.radius = r;
+    sphere.albedo = float3(0.0f, 0.0f, 0.0f);
+    sphere.specular = float3(0.0f, 0.0f, 0.0f);
+    return sphere;
+}
+
+float rand(float3 co)
+{
+    return frac(sin(dot(co.xyz, float3(12.9898, 78.233, 45.5432))) * 43758.5453);
+}
+
+RWStructuredBuffer<Sphere> Spheres;
+int stride;
+int SphereCount;
+
+float SpherePlacementRadius;
+
+[numthreads(100,1,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    float r = clamp(rand(id) + 0.4f, 0, 1);
+    float x = rand(id * 2) * SpherePlacementRadius;
+    float z = rand(id * 4) * SpherePlacementRadius;
+
+    Sphere sphere = CreateSphere(float3(x, r, z), r);
+
+    for (int i = 0; i < SphereCount; i++) {
+        float minDist = sphere.radius + Spheres[i].radius;
+        if (distance(sphere.position, Spheres[i].position) < minDist)
+            return; // TODO sphere.albedo = float3(1, 0, 0);
+    }
+
+    sphere.albedo = float3(rand(id * 3), rand(id * 5), rand(id * 7));
+    sphere.specular = float3(0.9f, 0.9f, 0.9f);
+
+    uint index = id.x + id.y * stride;
+    Spheres[index] = sphere;
+}

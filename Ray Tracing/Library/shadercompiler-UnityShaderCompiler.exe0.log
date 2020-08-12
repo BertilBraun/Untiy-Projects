@@ -1,0 +1,268 @@
+Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=259 outsize=258 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=258 outsize=385 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2295 outsize=858 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2295 outsize=446 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: preprocessCompute
+  insize=1430 outsize=1429 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1429 outsize=1029 ok=1
+Cmd: preprocessCompute
+  insize=1544 outsize=1543 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1543 outsize=1029 ok=1
+Cmd: preprocessCompute
+  insize=1762 outsize=1761 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1761 outsize=2210 ok=1
+Cmd: preprocessCompute
+  insize=2034 outsize=2033 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2033 outsize=2210 ok=1
+Cmd: preprocessCompute
+  insize=3559 outsize=3558 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=3558 outsize=3198 ok=1
+Cmd: preprocessCompute
+  insize=3712 outsize=3711 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(124): invalid subscript 'energy'
+  api=4 insize=3711 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4087 outsize=4086 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(102): invalid subscript 'energy'
+  api=4 insize=4086 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4084 outsize=4083 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(102): invalid subscript 'energy'
+  api=4 insize=4083 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4083 outsize=4082 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(102): invalid subscript 'energy'
+  api=4 insize=4082 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4124 outsize=4123 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(25): syntax error: unexpected token 'f'
+  error: 1 plat 4 at ComputeShader.compute(104): implicit truncation of vector type
+  api=4 insize=4123 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4145 outsize=4144 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=4144 outsize=2585 ok=1
+Cmd: preprocessCompute
+  insize=4148 outsize=4147 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=4147 outsize=3946 ok=1
+Cmd: preprocessCompute
+  insize=4148 outsize=4147 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=4147 outsize=3950 ok=1
+Cmd: preprocessCompute
+  insize=4555 outsize=4554 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(109): undeclared identifier '_DirectionalLight'
+  api=4 insize=4554 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=4463 outsize=4462 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=4462 outsize=4790 ok=1
+Cmd: preprocessCompute
+  insize=5093 outsize=5092 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(108): 'IntersectSphere': cannot implicitly convert from 'const float4' to 'struct Sphere'
+  api=4 insize=5092 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5089 outsize=5088 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(110): undeclared identifier 'Spheres'
+  api=4 insize=5088 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5126 outsize=5125 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(7): syntax error: unexpected token 'Sphere'
+  api=4 insize=5125 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5126 outsize=5125 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5125 outsize=5209 ok=1
+Cmd: preprocessCompute
+  insize=5030 outsize=5029 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(126): invalid subscript 'specular'
+  api=4 insize=5029 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5030 outsize=5029 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5029 outsize=5609 ok=1
+Cmd: preprocessCompute
+  insize=5036 outsize=5035 ok=1
+Cmd: compileComputeKernel
+  error: 1 plat 4 at ComputeShader.compute(156): loop only executes for 0 iteration(s), forcing loop to unroll
+  api=4 insize=5035 outsize=4797 ok=1
+Cmd: preprocessCompute
+  insize=5030 outsize=5029 ok=1
+Cmd: preprocessCompute
+  insize=5030 outsize=5029 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5029 outsize=5609 ok=1
+Cmd: preprocessCompute
+  insize=5068 outsize=5067 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5067 outsize=5652 ok=1
+Cmd: preprocessCompute
+  insize=421 outsize=420 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=420 outsize=461 ok=1
+Cmd: preprocessCompute
+  insize=448 outsize=447 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SphereCreationShader.compute(19): undeclared identifier 'Result'
+  api=4 insize=447 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1590 outsize=1589 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SphereCreationShader.compute(17): undeclared identifier 'List'
+  api=4 insize=1589 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1603 outsize=1602 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SphereCreationShader.compute(18): undeclared identifier 'List'
+  api=4 insize=1602 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1586 outsize=1585 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SphereCreationShader.compute(18): undeclared identifier 'List'
+  api=4 insize=1585 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=2013 outsize=2012 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2012 outsize=556 ok=1
+Cmd: preprocessCompute
+  insize=2055 outsize=2054 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2054 outsize=580 ok=1
+Cmd: preprocessCompute
+  insize=2053 outsize=2052 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2052 outsize=580 ok=1
+Cmd: preprocessCompute
+  insize=2208 outsize=2207 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2207 outsize=580 ok=1
+Cmd: preprocessCompute
+  insize=2376 outsize=2375 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2375 outsize=1317 ok=1
+Cmd: preprocessCompute
+  insize=2345 outsize=2344 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2344 outsize=1117 ok=1
+Cmd: preprocessCompute
+  insize=2536 outsize=2535 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SphereCreationShader.compute(42): undeclared identifier 'sphere'
+  api=4 insize=2535 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=2577 outsize=2576 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SphereCreationShader.compute(42): syntax error: unexpected token 'for'
+  error: 2 plat 4 at SphereCreationShader.compute(42): undeclared identifier 'i'
+  api=4 insize=2576 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=2578 outsize=2577 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SphereCreationShader.compute(43): undeclared identifier 'other'
+  api=4 insize=2577 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=2584 outsize=2583 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SphereCreationShader.compute(44): undeclared identifier 'pos'
+  api=4 insize=2583 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=2589 outsize=2588 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at SphereCreationShader.compute(44): undeclared identifier 'pos'
+  api=4 insize=2588 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=2601 outsize=2600 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2600 outsize=1508 ok=1
+Cmd: preprocessCompute
+  insize=2600 outsize=2599 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2599 outsize=1452 ok=1
+Cmd: preprocessCompute
+  insize=2620 outsize=2619 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2619 outsize=1520 ok=1
+Cmd: preprocessCompute
+  insize=2812 outsize=2811 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=2811 outsize=2328 ok=1
+Cmd: preprocessCompute
+  insize=1459 outsize=1458 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1458 outsize=2328 ok=1
+Cmd: preprocessCompute
+  insize=5098 outsize=5097 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5097 outsize=5320 ok=1
+Cmd: preprocessCompute
+  insize=1389 outsize=1388 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1388 outsize=2044 ok=1
+Cmd: preprocessCompute
+  insize=5068 outsize=5067 ok=1
+Cmd: preprocessCompute
+  insize=5155 outsize=5154 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(144): 'SampleLevel': no matching 3 parameter intrinsic method; Possible intrinsic methods are: Texture3D<float4>.SampleLevel(SamplerState, float3|half3|min10float3|min16float3, float1|half1|min10float1|min16float1) Texture3D<float4>.SampleLevel(SamplerState, float3|half3|min10float3|min16float3, float1|half1|min10float1|min16float1, int3) Texture3D<float4>.SampleLevel(SamplerState, float3|half3|min10float3|min16float3, float1|half1|min10float1|min16float1, int3, out uint status)
+  api=4 insize=5154 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5158 outsize=5157 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5157 outsize=4524 ok=1
+Cmd: preprocessCompute
+  insize=5211 outsize=5210 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(144): cannot implicitly convert from 'float3' to 'float4'
+  api=4 insize=5210 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5214 outsize=5213 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(159): incorrect number of arguments to numeric-type constructor
+  api=4 insize=5213 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5214 outsize=5213 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5213 outsize=4463 ok=1
+Cmd: preprocessCompute
+  insize=5262 outsize=5261 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5261 outsize=3155 ok=1
+Cmd: preprocessCompute
+  insize=5262 outsize=5261 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5261 outsize=3155 ok=1
+Cmd: preprocessCompute
+  insize=5214 outsize=5213 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5213 outsize=4463 ok=1
+Cmd: preprocessCompute
+  insize=5213 outsize=5212 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(145): cannot implicitly convert from 'float3' to 'float4'
+  api=4 insize=5212 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5209 outsize=5208 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5208 outsize=5692 ok=1
