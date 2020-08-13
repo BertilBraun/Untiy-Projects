@@ -170,9 +170,9 @@ MonoBehaviour:
   sphereCreation: {fileID: 7200000, guid: 5e83ffa3040c7774089aa4986527de57, type: 3}
   skyboxTexture: {fileID: 2800000, guid: 5f514d51ab844504da19c1409feff21b, type: 3}
   directionalLight: {fileID: 1286238378}
-  reflectionCount: 1
+  reflectionCount: 4
   SphereRadius: {x: 3, y: 8}
-  SphereCount: 100
+  SphereCount: 300
   SpherePlacementRadius: 50
 --- !u!1 &836636989
 GameObject:
