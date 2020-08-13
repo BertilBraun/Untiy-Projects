@@ -1,26 +1,321 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileSnippet
-  api=4 type=0 insize=16577 outsize=5382 kw=_SUNDISK_NONE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=16577 outsize=442 kw=_SUNDISK_NONE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=16577 outsize=5666 kw=_SUNDISK_SIMPLE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=16577 outsize=902 kw=_SUNDISK_SIMPLE pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
 Cmd: preprocessCompute
-  insize=261 outsize=260 ok=1
+  insize=5209 outsize=5208 ok=1
 Cmd: compileComputeKernel
-  api=4 insize=260 outsize=474 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1693 outsize=690 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1693 outsize=346 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1602 outsize=1894 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1602 outsize=6814 kw=UNITY_PASS_FORWARDBASE DIRECTIONAL LIGHTPROBE_SH pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1460 outsize=1690 kw=UNITY_PASS_FORWARDADD DIRECTIONAL pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1460 outsize=3378 kw=UNITY_PASS_FORWARDADD DIRECTIONAL pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+  api=4 insize=5208 outsize=5692 ok=1
+Cmd: preprocessCompute
+  insize=1389 outsize=1388 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1388 outsize=2044 ok=1
+Cmd: preprocessCompute
+  insize=7307 outsize=7306 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(87): unrecognized identifier 'Sphere'
+  api=4 insize=7306 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=7332 outsize=7331 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(189): invalid subscript 'distance'
+  api=4 insize=7331 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=7341 outsize=7340 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7340 outsize=2138 ok=1
+Cmd: preprocessCompute
+  insize=7341 outsize=7340 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7340 outsize=2138 ok=1
+Cmd: preprocessCompute
+  insize=7402 outsize=7401 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(219): undeclared identifier 'phi'
+  api=4 insize=7401 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=7530 outsize=7529 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7529 outsize=3407 ok=1
+Cmd: preprocessCompute
+  insize=7531 outsize=7530 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7530 outsize=3407 ok=1
+Cmd: preprocessCompute
+  insize=7407 outsize=7406 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7406 outsize=3211 ok=1
+Cmd: preprocessCompute
+  insize=7406 outsize=7405 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7405 outsize=3211 ok=1
+Cmd: preprocessCompute
+  insize=7460 outsize=7459 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7459 outsize=309 ok=1
+Cmd: preprocessCompute
+  insize=7397 outsize=7396 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7396 outsize=3211 ok=1
+Cmd: preprocessCompute
+  insize=7417 outsize=7416 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7416 outsize=3239 ok=1
+Cmd: preprocessCompute
+  insize=7419 outsize=7418 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7418 outsize=3239 ok=1
+Cmd: preprocessCompute
+  insize=7467 outsize=7466 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(212): incorrect number of arguments to numeric-type constructor
+  api=4 insize=7466 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=7482 outsize=7481 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7481 outsize=1902 ok=1
+Cmd: preprocessCompute
+  insize=7480 outsize=7479 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7479 outsize=1902 ok=1
+Cmd: preprocessCompute
+  insize=7462 outsize=7461 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7461 outsize=1882 ok=1
+Cmd: preprocessCompute
+  insize=7603 outsize=7602 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(148): 'sphereSDF': no matching 2 parameter function
+  api=4 insize=7602 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=7604 outsize=7603 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7603 outsize=1174 ok=1
+Cmd: preprocessCompute
+  insize=7620 outsize=7619 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7619 outsize=1194 ok=1
+Cmd: preprocessCompute
+  insize=7694 outsize=7693 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(148): 'length': no matching 2 parameter intrinsic function; Possible intrinsic functions are: length(floatM|halfM|min10floatM|min16floatM)
+  api=4 insize=7693 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=7695 outsize=7694 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7694 outsize=1282 ok=1
+Cmd: preprocessCompute
+  insize=7775 outsize=7774 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7774 outsize=1370 ok=1
+Cmd: preprocessCompute
+  insize=7692 outsize=7691 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7691 outsize=537 ok=1
+Cmd: preprocessCompute
+  insize=7727 outsize=7726 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7726 outsize=637 ok=1
+Cmd: preprocessCompute
+  insize=7697 outsize=7696 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7696 outsize=1602 ok=1
+Cmd: preprocessCompute
+  insize=7693 outsize=7692 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7692 outsize=1582 ok=1
+Cmd: preprocessCompute
+  insize=7767 outsize=7766 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7766 outsize=1530 ok=1
+Cmd: preprocessCompute
+  insize=7888 outsize=7887 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7887 outsize=1574 ok=1
+Cmd: preprocessCompute
+  insize=7882 outsize=7881 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7881 outsize=1574 ok=1
+Cmd: preprocessCompute
+  insize=7862 outsize=7861 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7861 outsize=465 ok=1
+Cmd: preprocessCompute
+  insize=7851 outsize=7850 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7850 outsize=309 ok=1
+Cmd: preprocessCompute
+  insize=7853 outsize=7852 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7852 outsize=309 ok=1
+Cmd: preprocessCompute
+  insize=7852 outsize=7851 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7851 outsize=309 ok=1
+Cmd: preprocessCompute
+  insize=7853 outsize=7852 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7852 outsize=1433 ok=1
+Cmd: preprocessCompute
+  insize=7794 outsize=7793 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7793 outsize=1469 ok=1
+Cmd: preprocessCompute
+  insize=7792 outsize=7791 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7791 outsize=1081 ok=1
+Cmd: preprocessCompute
+  insize=7792 outsize=7791 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7791 outsize=1081 ok=1
+Cmd: preprocessCompute
+  insize=7709 outsize=7708 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=7708 outsize=2366 ok=1
+Cmd: preprocessCompute
+  insize=5898 outsize=5897 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(118): unrecognized identifier 'RayHit'
+  api=4 insize=5897 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5952 outsize=5951 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5951 outsize=1081 ok=1
+Cmd: preprocessCompute
+  insize=5971 outsize=5970 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(115): 'RayMarch': function must return a value
+  error: 2 plat 4 at ComputeShader.compute(115): undeclared identifier 'dist'
+  api=4 insize=5970 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=5972 outsize=5971 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5971 outsize=1093 ok=1
+Cmd: preprocessCompute
+  insize=5974 outsize=5973 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5973 outsize=1481 ok=1
+Cmd: preprocessCompute
+  insize=5975 outsize=5974 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=5974 outsize=1481 ok=1
+Cmd: preprocessCompute
+  insize=6114 outsize=6113 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(169): incorrect number of arguments to numeric-type constructor
+  api=4 insize=6113 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6132 outsize=6131 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(118): 'GetLight': Not all control paths return a value
+  api=4 insize=6131 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6147 outsize=6146 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6146 outsize=309 ok=1
+Cmd: preprocessCompute
+  insize=6214 outsize=6213 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6213 outsize=2165 ok=1
+Cmd: preprocessCompute
+  insize=6193 outsize=6192 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6192 outsize=2345 ok=1
+Cmd: preprocessCompute
+  insize=6257 outsize=6256 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6256 outsize=2313 ok=1
+Cmd: preprocessCompute
+  insize=6416 outsize=6415 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(128): undeclared identifier 'dif'
+  api=4 insize=6415 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6420 outsize=6419 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6419 outsize=2905 ok=1
+Cmd: preprocessCompute
+  insize=6496 outsize=6495 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(103): 'capsuleSDF': no matching 3 parameter function
+  api=4 insize=6495 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6502 outsize=6501 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6501 outsize=3841 ok=1
+Cmd: preprocessCompute
+  insize=6500 outsize=6499 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6499 outsize=3269 ok=1
+Cmd: preprocessCompute
+  insize=6547 outsize=6546 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6546 outsize=3313 ok=1
+Cmd: preprocessCompute
+  insize=6299 outsize=6298 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6298 outsize=3241 ok=1
+Cmd: preprocessCompute
+  insize=6250 outsize=6249 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6249 outsize=3913 ok=1
+Cmd: preprocessCompute
+  insize=6504 outsize=6503 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(49): undeclared identifier 'mix'
+  api=4 insize=6503 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6505 outsize=6504 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(49): undeclared identifier 'Lerp'
+  api=4 insize=6504 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6505 outsize=6504 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6504 outsize=5189 ok=1
+Cmd: preprocessCompute
+  insize=6679 outsize=6678 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(114): undeclared identifier '_Time'
+  api=4 insize=6678 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6346 outsize=6345 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(115): type mismatch
+  api=4 insize=6345 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6357 outsize=6356 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(115): undeclared identifier 'xp'
+  api=4 insize=6356 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6357 outsize=6356 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6356 outsize=5994 ok=1
+Cmd: preprocessCompute
+  insize=6355 outsize=6354 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6354 outsize=5770 ok=1
+Cmd: preprocessCompute
+  insize=6357 outsize=6356 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6356 outsize=5189 ok=1
+Cmd: preprocessCompute
+  insize=6357 outsize=6356 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6356 outsize=5994 ok=1
+Cmd: preprocessCompute
+  insize=6410 outsize=6409 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at ComputeShader.compute(122): syntax error: unexpected token 'return'
+  api=4 insize=6409 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=6411 outsize=6410 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6410 outsize=6858 ok=1
+Cmd: preprocessCompute
+  insize=6411 outsize=6410 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6410 outsize=6858 ok=1
+Cmd: preprocessCompute
+  insize=6450 outsize=6449 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=6449 outsize=5130 ok=1
