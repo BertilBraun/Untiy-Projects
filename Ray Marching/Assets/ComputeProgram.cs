@@ -27,8 +27,8 @@ public class ComputeProgram : MonoBehaviour
     {
         var kernel = compute.FindKernel("CSMain");
 
-        Vector3 l = directionalLight.transform.forward;
-        compute.SetVector("DirectionalLight", new Vector4(l.x, l.y, l.z, directionalLight.intensity));
+        Vector3 l = directionalLight.transform.position;
+        compute.SetVector("Light", new Vector4(l.x, l.y, l.z, directionalLight.intensity));
 
         compute.SetFloat("iTime", Time.time);
         compute.SetInt("ReflectionCount", reflectionCount);

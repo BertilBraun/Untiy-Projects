@@ -8,7 +8,7 @@ Texture2D<float4> SkyboxTexture;
 SamplerState samplerSkyboxTexture;
 
 float iTime;
-float4 DirectionalLight;
+float4 Light;
 
 int ReflectionCount;
 
@@ -18,10 +18,16 @@ int ReflectionCount;
 
 static const float PI = 3.14159265f;
 
+float rand(float d)
+{
+    return frac(sin(dot(float2(d, d * 32.44324), float2(12.9898, 78.233))) * 43758.5453123);
+}
+
 struct Ray
 {
     float3 origin;
     float3 direction;
+    float3 energy;
 };
 
 Ray CreateRay(float3 origin, float3 direction)
@@ -29,6 +35,7 @@ Ray CreateRay(float3 origin, float3 direction)
     Ray ray;
     ray.origin = origin;
     ray.direction = direction;
+    ray.energy = float3(1, 1, 1);
     return ray;
 }
 
@@ -45,6 +52,65 @@ Ray CreateCameraRay(float2 uv)
     return CreateRay(origin, direction);
 }
 
+struct Hit
+{
+    float dist;
+    float3 p;
+    float3 n;
+    float3 specular;
+    float3 albedo;
+};
+
+float3 GetNormal(float3 p);
+
+Hit CreateHit(Ray ray, float d, float3 specular, float3 albedo)
+{
+    Hit hit;
+    hit.dist = d;
+    hit.p = ray.origin + d * ray.direction;
+    hit.n = GetNormal(hit.p);
+    hit.specular = specular;
+    hit.albedo = albedo;
+    return hit;
+}
+
+Hit CreateHit(Ray ray)
+{
+    Hit hit;
+    hit.dist = MAX_DISTANCE;
+    hit.p = float3(0, 0, 0);
+    hit.n = float3(0, 1, 0);
+    hit.specular = float3(0, 0, 0);
+    hit.albedo = float3(1, 1, 1);
+    return hit;
+}
+
+struct SDF 
+{
+    float dist;
+    float3 specular;
+    float3 albedo;
+};
+
+SDF CreateSDF(float dist, float3 specular, float3 albedo)
+{
+    SDF sdf;
+    sdf.dist = dist;
+    sdf.specular = specular;
+    sdf.albedo = albedo;
+    return sdf;
+}
+
+SDF CreateSDF(float dist, float3 albedo)
+{
+    return CreateSDF(dist, float3(0.8, 0.8, 0.8), albedo);
+}
+
+SDF CreateSDF(float dist)
+{
+    return CreateSDF(dist, float3(0.8, 0.8, 0.8), float3(rand(dist * 5), rand(dist * 7), rand(dist * 8)));
+}
+
 float2x2 rot(float angle) {
     float s = sin(angle);
     float c = cos(angle);
@@ -56,28 +122,48 @@ float smoothMin(float a, float b, float k) {
     return lerp(b, a, h) - k * h * (1. - h);
 }
 
-float intersectSDF(float distA, float distB) {
-    return max(distA, distB);
+SDF intersectSDF(SDF a, SDF b) {
+    if (a.dist < b.dist)
+        return b;
+    else
+        return a;
+    //return max(distA, distB);
 }
 
-float unionSDF(float distA, float distB) {
-    return min(distA, distB);
+SDF unionSDF(SDF a, SDF b) {
+    if (a.dist < b.dist)
+        return a;
+    else
+        return b;
+    //return min(distA, distB);
 }
 
 float unionSDF(float distA, float distB, float k) {
     return smoothMin(distA, distB, k);
 }
 
-float differenceSDF(float distA, float distB) {
-    return max(distA, -distB);
+SDF interpolateSDF(SDF a, SDF b, float k) {
+    SDF o;
+    o.dist = lerp(a.dist, b.dist, k);
+    o.specular = lerp(a.specular, b.specular, k);
+    o.albedo = lerp(a.albedo, b.albedo, k);
+    return o;
 }
 
-float torusSDF(float3 p, float3 pos, float2 r) {
+SDF differenceSDF(SDF a, SDF b) {
+    if (a.dist < -b.dist)
+        return b;
+    else
+        return a;
+    //return max(distA, -distB);
+}
+
+SDF torusSDF(float3 p, float3 pos, float2 r) {
     float x = length(p.xz - pos.xz) - r.x;
-    return length(float2(x, p.y - pos.y)) - r.y;
+    return CreateSDF(length(float2(x, p.y - pos.y)) - r.y);
 }
 
-float capsuleSDF(float3 p, float3 a, float3 b, float r) {
+SDF capsuleSDF(float3 p, float3 a, float3 b, float r) {
     float3 ab = b - a;
     float3 ap = p - a;
 
@@ -86,145 +172,118 @@ float capsuleSDF(float3 p, float3 a, float3 b, float r) {
     
     float3 c = a + t * ab;
 
-    return length(p - c) - r;
+    return CreateSDF(length(p - c) - r);
 }
 
-float sphereSDF(float3 p, float3 pos, float r) {
-    return length(p - pos) - r;
+SDF sphereSDF(float3 p, float3 pos, float r) {
+    return CreateSDF(length(p - pos) - r);
 }
-
-float sphereSDF(float3 p, float3 pos) {
+SDF sphereSDF(float3 p, float3 pos) {
     return sphereSDF(p, pos, 1.f);
 }
 
-float cubeSDF(float3 p, float3 pos, float3 size) {
+SDF cubeSDF(float3 p, float3 pos, float3 size) {
     float3 d = abs(p - pos) - size;
     float insideDistance = min(max(d.x, max(d.y, d.z)), 0);
     float outsideDistance = length(max(d, 0));
 
-    return insideDistance + outsideDistance;
+    return CreateSDF(insideDistance + outsideDistance);
+}
+SDF cubeSDF(float3 p, float3 pos) {
+    return cubeSDF(p, pos, float3(1, 1, 1));
 }
 
-float sceneSDF(float3 p) {
+SDF sceneSDF(float3 p) {
 
-    float sphere = sphereSDF(p, float3(0, 1, 0));
-    float capsule = capsuleSDF(p, float3(0, 1, 6), float3(1, 2, 6), 0.2f);
-    float torus = torusSDF(p, float3(0, .5, 6), float2(2, 0.4));
+    //float capsule = capsuleSDF(p, float3(0, 1, 6), float3(1, 2, 6), 0.2f);
+    //float torus = torusSDF(p, float3(0, .5, 6), float2(2, 0.4));
+    //
+    //float3 cp = float3(0, 0.5, 0); // float3(1, 0.5, 1);
+    ////cp.xz = mul(rot(iTime), cp.xz);
+    //float cube = cubeSDF(p, cp, float3(1, 1, 1));
+    //float plane = p.y;
 
-    float3 cp = float3(0, 0.5, 0); // float3(1, 0.5, 1);
-    //cp.xz = mul(rot(iTime), cp.xz);
-    float cube = cubeSDF(p, cp, float3(1, 1, 1));
-    float plane = p.y;
+    SDF plane = CreateSDF(p.y, float3(0.2, 0.2, 0.2));
 
-    float d = lerp(sphere, cube, sin(iTime) * 0.5 + 0.5);
-    
+    SDF sphere = sphereSDF(p, float3(0, 1, 0));
+    sphere.albedo = float3(0, 1, 0);
+
+    SDF cube = cubeSDF(p, float3(0, 1, 0));
+    cube.albedo = float3(1, 0, 0);
+
+    SDF d = interpolateSDF(sphere, cube, sin(iTime) * 0.5 + 0.5);
     d = unionSDF(d, plane);
     return d;
 }
 
-float RayMarch(Ray ray) {
-    float depth = 0;
+Hit RayMarch(Ray ray) {
+    SDF depth = CreateSDF(0);
     for (int i = 0; i < MAX_MARCHING_STEPS; i++) {
 
-        float3 samplePoint = ray.origin + depth * ray.direction;
-        float dist = sceneSDF(samplePoint);
-        // Move along the view ray
-        depth += dist;
-        if (dist < SURF_DIST || depth > MAX_DISTANCE) break;
+        SDF sdf = sceneSDF(ray.origin + depth.dist * ray.direction);
+        depth.specular = sdf.specular;
+        depth.albedo = sdf.albedo;
+        if (sdf.dist < SURF_DIST)
+            break;
+        depth.dist += sdf.dist;
+        if (depth.dist > MAX_DISTANCE)
+            return CreateHit(ray);
     }
-    return depth;
+    return CreateHit(ray, depth.dist, depth.specular, depth.albedo);
 }
 
 float3 GetNormal(float3 p) {
-    float d = sceneSDF(p);
+    float d = sceneSDF(p).dist;
     float2 e = float2(0.01, 0);
 
     return normalize(d - float3(
-        sceneSDF(p - e.xyy),
-        sceneSDF(p - e.yxy),
-        sceneSDF(p - e.yyx)
+        sceneSDF(p - e.xyy).dist,
+        sceneSDF(p - e.yxy).dist,
+        sceneSDF(p - e.yyx).dist
         ));
 }
 
+float3 Shade(inout Ray ray, Hit hit)
+{
+    if (hit.dist < MAX_DISTANCE)
+    {
+        ray.origin = hit.p + hit.n * SURF_DIST * 2.f;
+        ray.direction = reflect(ray.direction, hit.n);
+        ray.energy *= hit.specular;
+        
+        float3 vecToLight = -Light.xyz - hit.p;
 
-float GetLight(float3 p) {
-    float3 vecToLight = DirectionalLight.xyz - p;
-    vecToLight = float3(0, 5, 6) - p;
+        Ray shadowRay = CreateRay(ray.origin, normalize(vecToLight));
+        if (RayMarch(shadowRay).dist < length(vecToLight))
+            return float3(0.1f, 0.1f, 0.1f) * hit.albedo;
 
-    float3 l = normalize(vecToLight);
-    float3 n = GetNormal(p);
-
-    float diffuse = clamp(dot(n, l), 0., 1.);
-
-    float d = RayMarch(CreateRay(p + n * SURF_DIST * 2.f, l));
-    if (d < length(vecToLight)) diffuse *= .1;
-
-    return diffuse;
+        return saturate(-dot(hit.n, Light.xyz)) * Light.w * hit.albedo;
+    }
+    else
+    {
+        ray.energy = 0.0f;
+        float theta = acos(ray.direction.y) / -PI;
+        float phi = atan2(ray.direction.x, -ray.direction.z) / -PI * 0.5f;
+        return SkyboxTexture.SampleLevel(samplerSkyboxTexture, float2(phi, theta), 0).xyz;
+    }
 }
-
-//float3 Shade(inout Ray ray, RayHit hit)
-//{
-//    if (hit.distance < 1.#INF)
-//    {
-//        // Reflect the ray and multiply energy with specular reflection
-//        ray.origin = hit.position + hit.normal * 0.001f;
-//        ray.direction = reflect(ray.direction, hit.normal);
-//        ray.energy *= hit.specular;
-//        
-//        Ray shadowRay = CreateRay(hit.position + hit.normal * 0.001f, -1 * DirectionalLight.xyz);
-//        if (false) //RayMarch(shadowRay).distance != 1.#INF)
-//            return float3(0.0f, 0.0f, 0.0f);
-//
-//        return saturate(dot(hit.normal, DirectionalLight.xyz) * -1) * DirectionalLight.w * hit.albedo;
-//    }
-//    else
-//    {
-//        // Erase the ray's energy - the sky doesn't reflect anything
-//        ray.energy = 0.0f;
-//        // Sample the skybox and write it
-//        float theta = acos(ray.direction.y) / -PI;
-//        float phi = atan2(ray.direction.x, -ray.direction.z) / -PI * 0.5f;
-//        //return float4(0, 0, 0, 0);
-//        // return SkyboxTexture.SampleLevel(samplerSkyboxTexture, ray.direction, 0).xyz;
-//        return SkyboxTexture.SampleLevel(samplerSkyboxTexture, float2(phi, theta), 0).xyz;
-//    }
-//}
 
 [numthreads(8,8,1)]
 void CSMain(uint3 id : SV_DispatchThreadID)
 {
-    float3 color;
     uint width, height;
     Result.GetDimensions(width, height);
     float2 uv = float2((id.xy + float2(0.5f, 0.5f)) / float2(width, height) * 2.0f - 1.0f);
     Ray ray = CreateCameraRay(uv);
 
-    float dist = RayMarch(ray);
-
-    float diffuse = GetLight(ray.origin + dist * ray.direction);
-    
-    color = float3(diffuse, diffuse, diffuse);
-
-    Result[id.xy] = float4(color, 1);
-    return;
-    // Didn't hit anything
-    if (dist < MAX_DISTANCE) {
-        Result[id.xy] = float4(1, 0, 0, 1);
-        return;
+    float3 result = float3(0, 0, 0);
+    for (int i = 0; i < ReflectionCount; i++)
+    {
+        Hit hit = RayMarch(ray);
+        result += ray.energy * Shade(ray, hit);
+        if (!any(ray.energy))
+            break;
     }
-
-    float theta = acos(ray.direction.y) / -PI;
-    float phi = atan2(ray.direction.x, -ray.direction.z) / -PI * 0.5f;
-    Result[id.xy] = float4(SkyboxTexture.SampleLevel(samplerSkyboxTexture, float2(phi, theta), 0).xyz, 1.0);
-
-    //float3 result = float3(0, 0, 0);
-    //for (int i = 0; i < ReflectionCount; i++)
-    //{
-    //    RayHit hit = RayMarch(ray);
-    //    result += ray.energy * Shade(ray, hit);
-    //    if (!any(ray.energy))
-    //        break;
-    //}
-    //
-    //Result[id.xy] = float4(result, 1);
+    
+    Result[id.xy] = float4(result, 1);
 }
