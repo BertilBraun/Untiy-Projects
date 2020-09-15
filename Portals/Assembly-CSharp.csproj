@@ -63,18 +63,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CameraInteraction.cs" />
     <Compile Include="Assets\Scripts\CameraUtility.cs" />
+    <Compile Include="Assets\Scripts\Demo\FPSController.cs" />
+    <Compile Include="Assets\Scripts\Demo\SliceDemo.cs" />
     <Compile Include="Assets\Scripts\MainCameraController.cs" />
     <Compile Include="Assets\Scripts\Portal.cs" />
-    <Compile Include="Assets\Scripts\Sebastians\Portal.cs" />
-    <Compile Include="Assets\Scripts\Sebastians\PortalTraveller.cs" />
     <Compile Include="Assets\Scripts\Traveller.cs" />
     <None Include="Assets\Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Unlit.shader" />
-    <None Include="Assets\Portal Shader.shader" />
+    <None Include="Assets\Scripts\Shader\Portal Shader.shader" />
     <None Include="Assets\Assets\Free Low Poly Desert Pack\Materials\Shaders\Vertex_Color_Basic.shader" />
-    <None Include="Assets\Scripts\Sebastians\Slice.shader" />
-    <None Include="Assets\Scripts\Sebastians\Portal.shader" />
+    <None Include="Assets\Scripts\Shader\Slice.shader" />
+    <None Include="Assets\Assets\Car\License.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

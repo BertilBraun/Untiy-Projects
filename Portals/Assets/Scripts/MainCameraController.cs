@@ -14,6 +14,12 @@ public class MainCameraController : MonoBehaviour
     void OnPreCull()
     {
         foreach (var portal in portals)
+            portal.PrePortalRender();
+
+        foreach (var portal in portals)
             portal.Render();
+
+        foreach (var portal in portals)
+            portal.PostPortalRender();
     }
 }
