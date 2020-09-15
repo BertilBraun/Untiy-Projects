@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/RecursionScene.unity
+    guid: 17d0941cbb2a1c24b9b43e35a3a973b3
   m_configObjects: {}
